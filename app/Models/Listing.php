@@ -11,15 +11,23 @@ class Listing extends Model
 
     protected $guarded = [];
 
-    public function clicks () {
-        return $this->hasMany(Clicks::class);
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
-    public function user() {
+    public function clicks()
+    {
+        return $this->hasMany(Click::class);
+    }
+
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function tags() {
+    public function tags()
+    {
         return $this->belongsToMany(Tag::class);
     }
 }
