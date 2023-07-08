@@ -3,7 +3,7 @@
         <div class="w-full md:w-1/2 py-24 mx-auto">
             <div class="mb-4">
                 <h2 class="text-2xl font-medium text-gray-900 title-font">
-                    Create a new listing ($99)
+                    Create a new listing ($299)
                 </h2>
             </div>
             @if($errors->any())
@@ -25,8 +25,8 @@
                 @guest
                     <div class="flex mb-4">
                         <div class="flex-1 mx-2">
-                            <x-label for="email" value="Email Address" />
-                            <x-input
+                            <x-input-label for="email" value="Email Address" />
+                            <input
                                 class="block mt-1 w-full"
                                 id="email"
                                 type="email"
@@ -36,8 +36,8 @@
                                 autofocus />
                         </div>
                         <div class="flex-1 mx-2">
-                            <x-label for="name" value="Full Name" />
-                            <x-input
+                            <x-input-label for="name" value="Full Name" />
+                            <input
                                 class="block mt-1 w-full"
                                 id="name"
                                 type="text"
@@ -48,8 +48,8 @@
                     </div>
                     <div class="flex mb-4">
                         <div class="flex-1 mx-2">
-                            <x-label for="password" value="Password" />
-                            <x-input
+                            <x-input-label for="password" value="Password" />
+                            <input
                                 class="block mt-1 w-full"
                                 id="password"
                                 type="password"
@@ -57,8 +57,8 @@
                                 required />
                         </div>
                         <div class="flex-1 mx-2">
-                            <x-label for="password_confirmation" value="Confirm Password" />
-                            <x-input
+                            <x-input-label for="password_confirmation" value="Confirm Password" />
+                            <input
                                 class="block mt-1 w-full"
                                 id="password_confirmation"
                                 type="password"
@@ -68,8 +68,8 @@
                     </div>
                 @endguest
                 <div class="mb-4 mx-2">
-                    <x-label for="title" value="Job Title" />
-                    <x-input
+                    <x-input-label for="title" value="Job Title" />
+                    <input
                         id="title"
                         class="block mt-1 w-full"
                         type="text"
@@ -77,8 +77,8 @@
                         required />
                 </div>
                 <div class="mb-4 mx-2">
-                    <x-label for="company" value="Company Name" />
-                    <x-input
+                    <x-input-label for="company" value="Company Name" />
+                    <input
                         id="company"
                         class="block mt-1 w-full"
                         type="text"
@@ -86,16 +86,16 @@
                         required />
                 </div>
                 <div class="mb-4 mx-2">
-                    <x-label for="logo" value="Company Logo" />
-                    <x-input
+                    <x-input-label for="logo" value="Company Logo" />
+                    <input
                         id="logo"
                         class="block mt-1 w-full"
                         type="file"
                         name="logo" />
                 </div>
                 <div class="mb-4 mx-2">
-                    <x-label for="location" value="Location (e.g. Remote, United States)" />
-                    <x-input
+                    <x-input-label for="location" value="Location (e.g. Remote, United States)" />
+                    <input
                         id="location"
                         class="block mt-1 w-full"
                         type="text"
@@ -103,8 +103,8 @@
                         required />
                 </div>
                 <div class="mb-4 mx-2">
-                    <x-label for="apply_link" value="Link To Apply" />
-                    <x-input
+                    <x-input-label for="apply_link" value="Link To Apply" />
+                    <input
                         id="apply_link"
                         class="block mt-1 w-full"
                         type="text"
@@ -112,15 +112,15 @@
                         required />
                 </div>
                 <div class="mb-4 mx-2">
-                    <x-label for="tags" value="Tags (separate by comma)" />
-                    <x-input
+                    <x-input-label for="tags" value="Tags (separate by comma)" />
+                    <input
                         id="tags"
                         class="block mt-1 w-full"
                         type="text"
                         name="tags" />
                 </div>
                 <div class="mb-4 mx-2">
-                    <x-label for="content" value="Listing Content (Markdown is okay)" />
+                    <x-input-label for="content" value="Listing Content (Markdown is okay)" />
                     <textarea
                         id="content"
                         rows="8"

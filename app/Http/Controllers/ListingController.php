@@ -53,7 +53,7 @@ class ListingController extends Controller
 
     public function apply(Listing $listing, Request $request)
     {
-        
+
         $listing->clicks()
             ->create([
                 'user_agent' => $request->userAgent(),
@@ -108,7 +108,7 @@ class ListingController extends Controller
 
         // process the payment and create the listing
         try {
-            $amount = 9900; // $99.00 USD in cents
+            $amount = 29900; // $99.00 USD in cents
             if ($request->filled('is_highlighted')) {
                 $amount += 1900;
             }
