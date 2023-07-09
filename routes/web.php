@@ -19,7 +19,7 @@ Route::get('/', [Controllers\ListingController::class, 'index'])
     ->name('listings.index');
 
 Route::get('/dashboard', function (Request $request) {
-    return view('dashboard', ['listing' => $request->user()->listings]);
+    return view('dashboard', ['listings' => $request->user()->listings]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -27,6 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [Controllers\ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__.'/auth.php';
 
 Route::get('/new', [Controllers\ListingController::class, 'create'])
     ->name('listings.create');
@@ -39,5 +41,3 @@ Route::get('/{listing}', [Controllers\ListingController::class, 'show'])
 
 Route::get('/{listing}/apply', [Controllers\ListingController::class, 'apply'])
     ->name('listings.apply');
-
-require __DIR__.'/auth.php';
